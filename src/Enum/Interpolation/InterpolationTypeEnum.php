@@ -4,14 +4,9 @@ declare(strict_types=1);
 
 namespace PragmaGoTech\Interview\Enum\Interpolation;
 
-class InterpolationTypeEnum
+use PragmaGoTech\Interview\Enum\Enum;
+
+class InterpolationTypeEnum extends Enum
 {
     public const LINEAR = 'linear';
-
-    public static function getAll(): array
-    {
-        return [
-            self::LINEAR,
-        ];
-    }
 }

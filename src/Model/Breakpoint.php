@@ -47,7 +47,7 @@ class Breakpoint
      */
     private function validate(array $breakpointData): void
     {
-        $breakpointAttributes = BreakpointAttributeEnum::getAll();
+        $breakpointAttributes = BreakpointAttributeEnum::getList();
 
         if (count(array_intersect(array_keys($breakpointData), $breakpointAttributes)) !== count($breakpointAttributes)) {
             throw new NotFoundBreakpointAttributeException();

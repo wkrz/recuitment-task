@@ -18,13 +18,11 @@ class InterpolationContext
      * @throws NotFoundInterpolationStrategyException
      */
     public function __construct(string $interpolationType = InterpolationTypeEnum::LINEAR) {
-        $this->validate($interpolationType);
-
         switch ($interpolationType) {
-            case InterpolationTypeEnum::LINEAR:
+            // Here we can add additional strategies (e.g. cosine or cubic) for interpolation using Strategy Pattern.
+            default:
+                $this->checkExistenceOfInterpolationType($interpolationType);
                 $this->interpolationStrategy = new LinearInterpolationStrategy();
-                break;
-            // If necessary, we can add additional strategies (e.g. cosine or cubic) for interpolation using Strategy Pattern.
         }
     }
 
@@ -33,12 +31,9 @@ class InterpolationContext
         return $this->interpolationStrategy->calculate($term, $loanAmount);
     }
 
-    /**
-     * @throws NotFoundInterpolationStrategyException
-     */
-    private function validate(string $interpolationType): void
+    private function checkExistenceOfInterpolationType(string $interpolationType): void
     {
-        if (!in_array($interpolationType, InterpolationTypeEnum::getAll())) {
+        if (!in_array($interpolationType, InterpolationTypeEnum::getList(), true)) {
             throw new NotFoundInterpolationStrategyException($interpolationType);
         }
     }

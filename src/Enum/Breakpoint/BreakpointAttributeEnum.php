@@ -4,16 +4,10 @@ declare(strict_types=1);
 
 namespace PragmaGoTech\Interview\Enum\Breakpoint;
 
-class BreakpointAttributeEnum
+use PragmaGoTech\Interview\Enum\Enum;
+
+class BreakpointAttributeEnum extends Enum
 {
     public const AMOUNT  = 'amount';
     public const FEE = 'fee';
-
-    public static function getAll(): array
-    {
-        return [
-            self::AMOUNT,
-            self::FEE,
-        ];
-    }
 }

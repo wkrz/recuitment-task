@@ -8,6 +8,6 @@ class NotFoundBreakpointAttributeException extends BadRequestException
 {
     public function __construct()
     {
-        parent::__construct('Required breakpoint attributes are missing.');
+        parent::__construct('Required breakpoint attributes are missing');
     }
 }
