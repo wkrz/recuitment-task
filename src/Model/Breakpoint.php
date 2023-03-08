@@ -17,7 +17,7 @@ class Breakpoint
      */
     public function __construct(array $breakpointData)
     {
-        $this->validate($breakpointData);
+        $this->checkExistenceOfBreakpointAttribute($breakpointData);
         $this->setAmount($breakpointData[BreakpointAttributeEnum::AMOUNT]);
         $this->setFee($breakpointData[BreakpointAttributeEnum::FEE]);
     }
@@ -45,7 +45,7 @@ class Breakpoint
     /**
      * @throws NotFoundBreakpointAttributeException
      */
-    private function validate(array $breakpointData): void
+    private function checkExistenceOfBreakpointAttribute(array $breakpointData): void
     {
         $breakpointAttributes = BreakpointAttributeEnum::getList();
 

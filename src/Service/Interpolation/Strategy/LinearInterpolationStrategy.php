@@ -25,7 +25,7 @@ class LinearInterpolationStrategy implements InterpolationStrategyInterface
         $delta *= ($upperBound->getFee() - $lowerBound->getFee());
         $fee = $base + $delta;
         $grossLoan = $loanAmount + $fee;
-        $grossLoan = ceil($grossLoan/5) * 5;
+        $grossLoan = ceil($grossLoan / 5) * 5;
 
         return round($grossLoan - $loanAmount, 2);
     }
