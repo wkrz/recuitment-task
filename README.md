@@ -48,6 +48,12 @@ $fee = $calculator->calculate($application);
 // $fee = (float) 115.0
 ```
 
+# Run Tests
+Use this command in project folder to run tests
+```bash
+./vendor/bin/phpunit ./tests
+```
+
 # Fee Structure
 The fee structure doesn't follow particular algorithm and it is possible that same fee will be applicable for different amounts.
 
@@ -98,10 +104,4 @@ The fee structure doesn't follow particular algorithm and it is possible that sa
 18000 PLN: 720 PLN
 19000 PLN: 760 PLN
 20000 PLN: 800 PLN
-```
-
-### Test
-Use this command in project folder to run tests
-```bash
-./vendor/bin/phpunit ./tests
 ```
